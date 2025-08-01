@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Juan Alfonso García Real</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.4;
+            color: #2d3748;
+            background: #f7fafc;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            height: 297mm;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 22px 28px 18px;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3182ce, #4299e1);
+        }
+
+        .header-content {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 24px;
+            align-items: start;
+        }
+
+        .name-section h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin-bottom: 7px;
+            letter-spacing: -0.02em;
+        }
+
+        .title {
+            font-size: 1.05rem;
+            color: #a2d2ff;
+            font-weight: 500;
+            margin-bottom: 14px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 7px;
+            font-size: 0.85rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            color: #e2e8f0;
+        }
+
+        .contact-item i {
+            width: 15px;
+            font-size: 13px;
+            color: #90cdf4;
+        }
+
+        .qr-placeholder {
+            width: 65px;
+            height: 65px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .qr-placeholder i {
+            font-size: 20px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 0;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .left-column {
+            padding: 22px 28px;
+            overflow: hidden;
+        }
+
+        .right-column {
+            background: #f8fafc;
+            padding: 22px 20px;
+            border-left: 1px solid #e2e8f0;
+            overflow: hidden;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 18px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 11px;
+            padding-bottom: 4px;
+            border-bottom: 2px solid #3182ce;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .section-title i {
+            font-size: 14px;
+            color: #3182ce;
+        }
+
+        /* About */
+        .about-text {
+            font-size: 0.87rem;
+            line-height: 1.55;
+            text-align: justify;
+            color: #4a5568;
+        }
+
+        /* Experience & Education */
+        .timeline-item {
+            position: relative;
+            padding-left: 19px;
+            margin-bottom: 14px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 4px;
+            width: 9px;
+            height: 9px;
+            background: #3182ce;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 0 0 1px #3182ce;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 13px;
+            bottom: -14px;
+            width: 2px;
+            background: #e2e8f0;
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 3px;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 0.83rem;
+        }
+
+        .timeline-date {
+            font-size: 0.68rem;
+            color: #718096;
+            font-weight: 500;
+            background: #edf2f7;
+            padding: 2px 6px;
+            border-radius: 7px;
+        }
+
+        .timeline-company {
+            color: #4a5568;
+            font-size: 0.77rem;
+            margin-bottom: 5px;
+        }
+
+        .timeline-description {
+            font-size: 0.73rem;
+            color: #718096;
+            line-height: 1.3;
+        }
+
+        .timeline-description li {
+            margin-bottom: 2px;
+        }
+
+        /* Projects */
+        .project-item {
+            margin-bottom: 12px;
+            padding: 11px;
+            background: #f8fafc;
+            border-radius: 6px;
+            border-left: 3px solid #3182ce;
+        }
+
+        .project-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 5px;
+        }
+
+        .project-title {
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 0.78rem;
+        }
+
+        .project-status {
+            font-size: 0.58rem;
+            padding: 2px 5px;
+            border-radius: 7px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .status-development {
+            background: #fed7aa;
+            color: #c2410c;
+        }
+
+        .status-completed {
+            background: #bbf7d0;
+            color: #15803d;
+        }
+
+        .project-description {
+            font-size: 0.73rem;
+            color: #4a5568;
+            line-height: 1.25;
+            margin-bottom: 5px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3px;
+        }
+
+        .tech-tag {
+            font-size: 0.58rem;
+            padding: 2px 4px;
+            background: #e6fffa;
+            color: #0d9488;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        /* Skills */
+        .skills-category {
+            margin-bottom: 12px;
+        }
+
+        .skills-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .skills-category h4 {
+            font-size: 0.73rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .skills-category i {
+            font-size: 10px;
+            color: #3182ce;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3px;
+        }
+
+        .skill-tag {
+            font-size: 0.63rem;
+            padding: 3px 5px;
+            background: white;
+            color: #4a5568;
+            border-radius: 4px;
+            border: 1px solid #e2e8f0;
+            font-weight: 500;
+        }
+
+        /* Languages */
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 7px;
+            background: white;
+            border-radius: 4px;
+            margin-bottom: 5px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .language-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .language-name {
+            font-weight: 500;
+            color: #2d3748;
+            font-size: 0.73rem;
+        }
+
+        .language-level {
+            font-size: 0.63rem;
+            background: #3182ce;
+            color: white;
+            padding: 2px 5px;
+            border-radius: 7px;
+            font-weight: 600;
+        }
+
+        /* Achievements */
+        .achievement-item {
+            display: flex;
+            align-items: start;
+            gap: 8px;
+            margin-bottom: 10px;
+            padding: 7px;
+            background: white;
+            border-radius: 4px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .achievement-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .achievement-icon {
+            width: 22px;
+            height: 22px;
+            background: linear-gradient(135deg, #3182ce, #4299e1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 9px;
+            flex-shrink: 0;
+        }
+
+        .achievement-content h5 {
+            font-size: 0.73rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 2px;
+        }
+
+        .achievement-content p {
+            font-size: 0.68rem;
+            color: #718096;
+            line-height: 1.15;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .cv-container {
+                box-shadow: none;
+                border-radius: 0;
+                margin: 0;
+                max-width: none;
+            }
+            
+            .section {
+                break-inside: avoid;
+            }
+            
+            .project-item,
+            .achievement-item {
+                break-inside: avoid;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cv-container {
+                margin: 10px;
+                border-radius: 0;
+                box-shadow: none;
+            }
+            
+            .header {
+                padding: 30px 20px 20px;
+            }
+            
+            .header-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .qr-placeholder {
+                justify-self: center;
+            }
+            
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .left-column,
+            .right-column {
+                padding: 25px 20px;
+            }
+            
+            .right-column {
+                border-left: none;
+                border-top: 1px solid #e2e8f0;
+            }
+            
+            .timeline-header {
+                flex-direction: column;
+                align-items: start;
+            }
+            
+            .timeline-date {
+                margin-top: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="name-section">
+                    <h1>Juan Alfonso García Real</h1>
+                    <div class="title">Data Scientist</div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>jagarrea@etsinf.upv.es</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+34 691 730 393</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <span>github.com/juangarcia83</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>València, España</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="qr-placeholder">
+                    <i class="fas fa-qrcode"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- About -->
+                <section class="section">
+                    <h3 class="section-title">
+                        <i class="fas fa-user"></i>
+                        Perfil Profesional
+                    </h3>
+                    <p class="about-text">
+                        Estudiante de 4º curso del Grado en Ciencia de Datos en la Universitat Politècnica de València. Apasionado por la Visión por Computador, Inteligencia Artificial y Ciberseguridad. Experiencia en proyectos de clasificación de imágenes, procesamiento de lenguaje natural y sistemas RAG con modelos generativos. Busco prácticas profesionales para aplicar mis conocimientos en proyectos innovadores.
+                    </p>
+                </section>
+
+                <!-- Education -->
+                <section class="section">
+                    <h3 class="section-title">
+                        <i class="fas fa-graduation-cap"></i>
+                        Formación Académica
+                    </h3>
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <div class="timeline-title">Grado en Ciencia de Datos</div>
+                            <div class="timeline-date">2022 - Actualidad</div>
+                        </div>
+                        <div class="timeline-company">Universitat Politècnica de València</div>
+                        <div class="timeline-description">
+                            Formación integral en análisis de datos, machine learning, estadística aplicada y programación. Especialización en técnicas avanzadas de inteligencia artificial y procesamiento de datos.
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Projects -->
+                <section class="section">
+                    <h3 class="section-title">
+                        <i class="fas fa-project-diagram"></i>
+                        Proyectos Destacados
+                    </h3>
+                    
+                    <div class="project-item">
+                        <div class="project-header">
+                            <div class="project-title">OCR para manuscritos en sánscrito</div>
+                            <div class="project-status status-development">En desarrollo</div>
+                        </div>
+                        <div class="project-description">
+                            Sistema OCR multilingüe basado en CNN para reconocimiento de caracteres en escritura devanagari con segmentación automática.
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">CNN</span>
+                            <span class="tech-tag">Tesseract</span>
+                            <span class="tech-tag">OpenCV</span>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-header">
+                            <div class="project-title">Sistema RAG con resúmenes personalizados</div>
+                            <div class="project-status status-completed">Completado</div>
+                        </div>
+                        <div class="project-description">
+                            Implementación de sistema de recuperación y generación aumentada adaptativo al perfil del usuario.
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">LangChain</span>
+                            <span class="tech-tag">OpenAI API</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">NLP</span>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-header">
+                            <div class="project-title">Clasificador de posición de manos</div>
+                            <div class="project-status status-completed">Completado</div>
+                        </div>
+                        <div class="project-description">
+                            Sistema de visión por computador con Bag of Visual Words y clasificador híbrido SVM + MLP.
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Computer Vision</span>
+                            <span class="tech-tag">SVM</span>
+                            <span class="tech-tag">MLP</span>
+                            <span class="tech-tag">K-Means</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Achievements -->
+                <section class="section">
+                    <h3 class="section-title">
+                        <i class="fas fa-trophy"></i>
+                        Logros y Competiciones
+                    </h3>
+                    
+                    <div class="achievement-item">
+                        <div class="achievement-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h5>I Olimpiada de Matemática Aplicada - UPV</h5>
+                        </div>
+                    </div>
+
+                    <div class="achievement-item">
+                        <div class="achievement-icon">
+                            <i class="fas fa-flag-checkered"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h5>HackTheBox University CTF 2024</h5>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Technical Skills -->
+                <section class="section">
+                    <h3 class="section-title">
+                        <i class="fas fa-code"></i>
+                        Habilidades Técnicas
+                    </h3>
+                    
+                    <div class="skills-category">
+                        <h4><i class="fas fa-laptop-code"></i> Lenguajes</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">MATLAB</span>
+                            <span class="skill-tag">SQL</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h4><i class="fas fa-brain"></i> Machine Learning</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">scikit-learn</span>
+                            <span class="skill-tag">pandas</span>
+                            <span class="skill-tag">NumPy</span>
+                            <span class="skill-tag">matplotlib</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h4><i class="fas fa-eye"></i> Computer Vision</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">OpenCV</span>
+                            <span class="skill-tag">CNN</span>
+                            <span class="skill-tag">Tesseract</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h4><i class="fas fa-language"></i> NLP</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">HuggingFace</span>
+                            <span class="skill-tag">LangChain</span>
+                            <span class="skill-tag">GPT/BERT</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h4><i class="fas fa-tools"></i> Herramientas</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Jupyter</span>
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">Power BI</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h4><i class="fas fa-shield-alt"></i> Ciberseguridad</h4>
+                        <div class="skills-list">
+                            <span class="skill-tag">Linux</span>
+                            <span class="skill-tag">Wireshark</span>
+                            <span class="skill-tag">Nmap</span>
+                            <span class="skill-tag">Nikto</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Languages -->
+                <section class="section">
+                    <h3 class="section-title">
+                        <i class="fas fa-globe"></i>
+                        Idiomas
+                    </h3>
+                    
+                    <div class="language-item">
+                        <div class="language-name">Español</div>
+                        <div class="language-level">Nativo</div>
+                    </div>
+                    
+                    <div class="language-item">
+                        <div class="language-name">Inglés</div>
+                        <div class="language-level">B2 FCE</div>
+                    </div>
+                    
+                    <div class="language-item">
+                        <div class="language-name">Valenciano</div>
+                        <div class="language-level">C1 Mitjà</div>
+                    </div>
+                </section>
+
+                <!-- Additional Info -->
+                <section class="section">
+                    <h3 class="section-title">
+                        <i class="fas fa-info-circle"></i>
+                        Información Adicional
+                    </h3>
+                    
+                    <div style="font-size: 0.73rem; color: #4a5568; line-height: 1.25;">
+                        <p style="margin-bottom: 5px;"><strong>Disponibilidad:</strong> Tiempo completo</p>
+                        <p style="margin-bottom: 5px;"><strong>Modalidad:</strong> Presencial/Híbrido</p>
+                        <p style="margin-bottom: 5px;"><strong>Ubicación:</strong> València</p>
+                        <p><strong>Intereses:</strong> IA, CV, NLP, MLOps</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Print functionality
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+                e.preventDefault();
+                window.print();
+            }
+        });
+
+        // Add smooth animations on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+                
+                setTimeout(() => {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, 100 + (index * 100));
+            });
+        });
+    </script>
+</body>
+</html>

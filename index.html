@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+    <!-- Critical Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Title & Description -->
+    <title>Juan Alfonso García Real - Data Scientist & AI Researcher</title>
+    <meta name="description" content="Data Scientist especializado en Computer Vision, NLP y Ciberseguridad. Investigador apasionado por el desarrollo de soluciones innovadoras en inteligencia artificial.">
+    <meta name="keywords" content="Data Scientist, Computer Vision, NLP, Machine Learning, Inteligencia Artificial, Python, OCR, Sánscrito, RAG, Valencia">
+    <meta name="author" content="Juan Alfonso García Real">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://juangarcia83.github.io/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://juangarcia83.github.io/">
+    <meta property="og:title" content="Juan Alfonso García Real - Data Scientist & AI Researcher">
+    <meta property="og:description" content="Investigador apasionado por el desarrollo de soluciones innovadoras en inteligencia artificial, especializado en Computer Vision y NLP.">
+    <meta property="og:image" content="https://juangarcia83.github.io/assets/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Juan Alfonso García Real">
+    <meta property="og:locale" content="es_ES">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://juangarcia83.github.io/">
+    <meta name="twitter:title" content="Juan Alfonso García Real - Data Scientist">
+    <meta property="twitter:description" content="Investigador apasionado por el desarrollo de soluciones innovadoras en inteligencia artificial">
+    <meta name="twitter:image" content="https://juangarcia83.github.io/assets/images/twitter-image.jpg">
+    <meta name="twitter:creator" content="@juangarcia83">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#007AFF" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#111827" media="(prefers-color-scheme: dark)">
+    <meta name="msapplication-TileColor" content="#007AFF">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+    
+    <!-- Critical CSS (inline for performance) -->
+    <style>
+        /* Critical Above-the-fold CSS */
+        :root {
+            --primary-color: #007AFF;
+            --secondary-color: #005BB5;
+            --accent-color: #34C759;
+            --text-dark: #1d1d1f;
+            --text-light: #86868b;
+            --bg-light: #f5f5f7;
+            --bg-dark: #000000;
+            --card-bg: #ffffff;
+            --border-color: #d2d2d7;
+            --font-family-primary: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --radius-lg: 1rem;
+            --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+            --transition-base: 250ms ease-in-out;
+        }
+
+        [data-theme="dark"] {
+            --text-dark: #f5f5f7;
+            --text-light: #a1a1a6;
+            --bg-light: #000000;
+            --card-bg: #1d1d1f;
+            --border-color: #424245;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 5rem;
+        }
+
+        body {
+            font-family: var(--font-family-primary);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transition: color var(--transition-base), background-color var(--transition-base);
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1030;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            transition: all var(--transition-base);
+        }
+
+        [data-theme="dark"] .navbar {
+            background: rgba(17, 24, 39, 0.8);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-light) 100%);
+            padding-top: 5rem;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: var(--space-lg);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: var(--space-md) var(--space-xl);
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            transition: all var(--transition-base);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+    </style>
+    
+    <!-- Load main CSS asynchronously -->
+    <link rel="preload" href="/assets/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/main.css"></noscript>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Juan Alfonso García Real",
+      "jobTitle": "Data Scientist",
+      "description": "Investigador apasionado por el desarrollo de soluciones innovadoras en inteligencia artificial",
+      "url": "https://juangarcia83.github.io/",
+      "email": "jagarrea@etsinf.upv.es",
+      "telephone": "+34691730393",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "València",
+        "addressCountry": "España"
+      },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Universitat Politècnica de València"
+      },
+      "knowsAbout": [
+        "Data Science", 
+        "Computer Vision", 
+        "Machine Learning", 
+        "Natural Language Processing", 
+        "Cybersecurity",
+        "Python",
+        "OCR",
+        "Sanskrit",
+        "RAG Systems"
+      ],
+      "sameAs": [
+        "https://github.com/juangarcia83"
+      ],
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Grado en Ciencia de Datos",
+        "credentialCategory": "degree",
+        "educationalLevel": "undergraduate"
+      }
+    }
+    </script>
+    
+    <!-- Performance Monitoring -->
+    <script>
+        // Mark start time for performance monitoring
+        window.performance.mark('app-start');
+        
+        // Remove no-js class
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+        
+        // Critical path optimization
+        (function() {
+            // Early theme detection
+            const savedTheme = localStorage.getItem('theme');
+            const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (systemDark ? 'dark' : 'light');
+            
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main" class="skip-link">Saltar al contenido principal</a>
+    
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Navegación principal">
+        <div class="container">
+            <div class="navbar-content">
+                <a href="#home" class="navbar-brand" aria-label="Inicio">
+                    JA García
+                </a>
+                
+                <ul class="navbar-nav" role="menubar">
+                    <li role="none">
+                        <a href="#home" class="navbar-link" data-nav-link role="menuitem">Inicio</a>
+                    </li>
+                    <li role="none">
+                        <a href="#about" class="navbar-link" data-nav-link role="menuitem">Sobre mí</a>
+                    </li>
+                    <li role="none">
+                        <a href="#projects" class="navbar-link" data-nav-link role="menuitem">Proyectos</a>
+                    </li>
+                    <li role="none">
+                        <a href="#skills" class="navbar-link" data-nav-link role="menuitem">Habilidades</a>
+                    </li>
+                    <li role="none">
+                        <a href="#contact" class="navbar-link" data-nav-link role="menuitem">Contacto</a>
+                    </li>
+                    <li role="none">
+                        <a href="/pages/blog.html" class="navbar-link" role="menuitem">Blog</a>
+                    </li>
+                    <li role="none">
+                        <a href="/pages/lab.html" class="navbar-link" role="menuitem">Laboratorio</a>
+                    </li>
+                    <li role="none">
+                        <a href="/pages/resources.html" class="navbar-link" role="menuitem">Recursos</a>
+                    </li>
+                    <li role="none">
+                        <a href="/pages/cv.html" class="navbar-link" role="menuitem">CV</a>
+                    </li>
+                    <li role="none">
+                        <button 
+                            class="theme-toggle btn-ghost" 
+                            data-theme-toggle 
+                            aria-label="Cambiar tema"
+                            title="Cambiar entre tema claro y oscuro"
+                        >
+                            <i class="fas fa-moon" data-theme-icon aria-hidden="true"></i>
+                        </button>
+                    </li>
+                </ul>
+                
+                <!-- Mobile Menu Toggle -->
+                <button 
+                    class="mobile-menu-toggle" 
+                    data-menu-toggle
+                    aria-label="Abrir menú de navegación"
+                    aria-expanded="false"
+                    aria-controls="mobile-menu"
+                >
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" data-mobile-menu id="mobile-menu" role="menu">
+            <div class="mobile-menu-content">
+                <a href="#home" class="mobile-nav-link" role="menuitem">Inicio</a>
+                <a href="#about" class="mobile-nav-link" role="menuitem">Sobre mí</a>
+                <a href="#projects" class="mobile-nav-link" role="menuitem">Proyectos</a>
+                <a href="#skills" class="mobile-nav-link" role="menuitem">Habilidades</a>
+                <a href="#contact" class="mobile-nav-link" role="menuitem">Contacto</a>
+                <a href="/pages/blog.html" class="mobile-nav-link" role="menuitem">Blog</a>
+                <a href="/pages/lab.html" class="mobile-nav-link" role="menuitem">Laboratorio</a>
+                <a href="/pages/resources.html" class="mobile-nav-link" role="menuitem">Recursos</a>
+                <a href="/pages/cv.html" class="mobile-nav-link" role="menuitem">CV</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main" role="main">
+        <!-- Hero Section -->
+        <section id="home" class="hero" aria-labelledby="hero-title">
+            <div class="container">
+                <div class="hero-container">
+                    <div class="hero-content" data-animate="fade-in">
+                        <h1 id="hero-title" class="hero-title">
+                            Juan Alfonso García Real
+                        </h1>
+                        <p class="hero-subtitle lead" data-animate="fade-in" data-delay="200">
+                            Data Scientist & AI Researcher
+                        </p>
+                        <p class="hero-description" data-animate="fade-in" data-delay="400">
+                            Estudiante de 4º curso en Ciencia de Datos, especializado en Visión por Computador, 
+                            Inteligencia Artificial y Ciberseguridad. Apasionado por desarrollar soluciones 
+                            innovadoras que combinen ML, Computer Vision y NLP.
+                        </p>
+                        
+                        <div class="hero-actions" data-animate="fade-in" data-delay="600">
+                            <a href="#projects" class="btn btn-primary">
+                                <i class="fas fa-code" aria-hidden="true"></i>
+                                Ver Proyectos
+                            </a>
+                            <a href="#contact" class="btn btn-secondary">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                                Contactar
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Hero Image/Visual -->
+                    <div class="hero-visual" data-animate="scale-in" data-delay="800">
+                        <div class="profile-card card-elevated">
+                            <div class="profile-avatar">
+                                <i class="fas fa-user" aria-hidden="true"></i>
+                            </div>
+                            <h3>Data Scientist</h3>
+                            <p class="text-secondary">València, España</p>
+                            
+                            <div class="social-links">
+                                <a 
+                                    href="mailto:jagarrea@etsinf.upv.es" 
+                                    class="social-link" 
+                                    aria-label="Contactar por email"
+                                    title="jagarrea@etsinf.upv.es"
+                                >
+                                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                                </a>
+                                <a 
+                                    href="https://github.com/juangarcia83" 
+                                    class="social-link" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    aria-label="Ver perfil de GitHub"
+                                    title="GitHub: juangarcia83"
+                                >
+                                    <i class="fab fa-github" aria-hidden="true"></i>
+                                </a>
+                                <a 
+                                    href="tel:+34691730393" 
+                                    class="social-link" 
+                                    aria-label="Llamar por teléfono"
+                                    title="+34 691 730 393"
+                                >
+                                    <i class="fas fa-phone" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section" aria-labelledby="about-title">
+            <div class="container">
+                <header class="section-header" data-animate="fade-in">
+                    <h2 id="about-title" class="section-title">Sobre Mí</h2>
+                    <p class="section-subtitle">
+                        Investigador apasionado por el desarrollo de soluciones innovadoras en inteligencia artificial
+                    </p>
+                </header>
+                
+                <div class="grid grid-lg-2 gap-xl">
+                    <div class="about-content" data-animate="slide-in-left">
+                        <p class="lead">
+                            Mi pasión por la investigación en inteligencia artificial me ha llevado a explorar 
+                            las fronteras entre Computer Vision, Natural Language Processing y ciberseguridad.
+                        </p>
+                        <p>
+                            Disfruto especialmente del proceso de desarrollo de algoritmos innovadores, desde 
+                            la conceptualización hasta la implementación práctica. Mi enfoque se centra en crear 
+                            soluciones que no solo sean técnicamente robustas, sino que también aporten valor 
+                            real a problemas complejos.
+                        </p>
+                        <p>
+                            Me motiva profundamente la investigación aplicada, la experimentación con nuevas 
+                            arquitecturas de redes neuronales, y la búsqueda constante de métodos más eficientes 
+                            para el procesamiento inteligente de datos.
+                        </p>
+                    </div>
+                    
+                    <div class="about-stats grid grid-2 gap-md" data-animate="fade-in" data-delay="300">
+                        <div class="stat-card card text-center">
+                            <div class="stat-number h2" data-countup="4">4</div>
+                            <div class="stat-label text-secondary">Año Académico</div>
+                        </div>
+                        <div class="stat-card card text-center">
+                            <div class="stat-number h2" data-countup="3">3</div>
+                            <div class="stat-label text-secondary">Proyectos Principales</div>
+                        </div>
+                        <div class="stat-card card text-center">
+                            <div class="stat-number h2" data-countup="6">6</div>
+                            <div class="stat-label text-secondary">Áreas de Especialización</div>
+                        </div>
+                        <div class="stat-card card text-center">
+                            <div class="stat-number h2">∞</div>
+                            <div class="stat-label text-secondary">Curiosidad por Aprender</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section bg-secondary" aria-labelledby="projects-title">
+            <div class="container">
+                <header class="section-header" data-animate="fade-in">
+                    <h2 id="projects-title" class="section-title">Proyectos Destacados</h2>
+                    <p class="section-subtitle">
+                        Una selección de mis trabajos más significativos en Machine Learning, Computer Vision y NLP
+                    </p>
+                </header>
+                
+                <div class="projects-grid grid-auto-fit gap-xl">
+                    <!-- Project 1: OCR Sánscrito -->
+                    <article class="project-card card-elevated" data-animate="fade-in">
+                        <div class="project-status status-development">En Desarrollo</div>
+                        <div class="project-icon">
+                            <i class="fas fa-eye" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="project-title">OCR para manuscritos en sánscrito</h3>
+                        <p class="project-description">
+                            Sistema OCR multilingüe basado en CNN para reconocimiento de caracteres en 
+                            escritura devanagari con segmentación automática de caracteres y alta precisión 
+                            en manuscritos históricos.
+                        </p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">Tesseract</span>
+                            <span class="tech-tag">CNN</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="#" class="btn btn-sm btn-ghost" aria-label="Ver código en GitHub">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                                Código
+                            </a>
+                            <a href="/pages/lab.html#ocr-demo" class="btn btn-sm btn-primary">
+                                <i class="fas fa-play" aria-hidden="true"></i>
+                                Demo
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: Sistema RAG -->
+                    <article class="project-card card-elevated" data-animate="fade-in" data-delay="200">
+                        <div class="project-status status-completed">Completado</div>
+                        <div class="project-icon">
+                            <i class="fas fa-robot" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="project-title">Sistema RAG con resúmenes personalizados</h3>
+                        <p class="project-description">
+                            Implementación de sistema de recuperación y generación aumentada adaptativo 
+                            al perfil del usuario con personalización de respuestas y memoria de contexto 
+                            avanzada.
+                        </p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">LangChain</span>
+                            <span class="tech-tag">OpenAI API</span>
+                            <span class="tech-tag">Vector DB</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">FastAPI</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="#" class="btn btn-sm btn-ghost" aria-label="Ver código en GitHub">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                                Código
+                            </a>
+                            <a href="/pages/lab.html#rag-demo" class="btn btn-sm btn-primary">
+                                <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                                Demo
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: Clasificador de Gestos -->
+                    <article class="project-card card-elevated" data-animate="fade-in" data-delay="400">
+                        <div class="project-status status-completed">Completado</div>
+                        <div class="project-icon">
+                            <i class="fas fa-hand-paper" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="project-title">Clasificador de posición de manos</h3>
+                        <p class="project-description">
+                            Sistema de visión por computador utilizando Bag of Visual Words y clasificador 
+                            híbrido SVM + MLP para reconocimiento de gestos en tiempo real con alta precisión.
+                        </p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">Computer Vision</span>
+                            <span class="tech-tag">SVM</span>
+                            <span class="tech-tag">MLP</span>
+                            <span class="tech-tag">K-Means</span>
+                            <span class="tech-tag">OpenCV</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="#" class="btn btn-sm btn-ghost" aria-label="Ver código en GitHub">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                                Código
+                            </a>
+                            <a href="/pages/lab.html#gesture-demo" class="btn btn-sm btn-primary">
+                                <i class="fas fa-video" aria-hidden="true"></i>
+                                Demo
+                            </a>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="text-center" data-animate="fade-in" data-delay="600">
+                    <a href="/pages/projects.html" class="btn btn-lg btn-primary">
+                        <i class="fas fa-folder-open" aria-hidden="true"></i>
+                        Ver Todos los Proyectos
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section" aria-labelledby="skills-title">
+            <div class="container">
+                <header class="section-header" data-animate="fade-in">
+                    <h2 id="skills-title" class="section-title">Habilidades Técnicas</h2>
+                    <p class="section-subtitle">
+                        Tecnologías y herramientas que domino en mi desarrollo como Data Scientist
+                    </p>
+                </header>
+                
+                <div class="skills-grid grid-auto-fit gap-lg">
+                    <div class="skill-category card text-center" data-animate="fade-in">
+                        <div class="skill-icon">
+                            <i class="fas fa-code" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="skill-title">Lenguajes de Programación</h3>
+                        <div class="skill-list">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">MATLAB</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">R</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category card text-center" data-animate="fade-in" data-delay="100">
+                        <div class="skill-icon">
+                            <i class="fas fa-brain" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="skill-title">Machine Learning</h3>
+                        <div class="skill-list">
+                            <span class="tech-tag">scikit-learn</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">pandas</span>
+                            <span class="tech-tag">NumPy</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category card text-center" data-animate="fade-in" data-delay="200">
+                        <div class="skill-icon">
+                            <i class="fas fa-eye" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="skill-title">Computer Vision</h3>
+                        <div class="skill-list">
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">CNN</span>
+                            <span class="tech-tag">YOLO</span>
+                            <span class="tech-tag">Tesseract</span>
+                            <span class="tech-tag">PIL</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category card text-center" data-animate="fade-in" data-delay="300">
+                        <div class="skill-icon">
+                            <i class="fas fa-language" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="skill-title">Natural Language Processing</h3>
+                        <div class="skill-list">
+                            <span class="tech-tag">HuggingFace</span>
+                            <span class="tech-tag">LangChain</span>
+                            <span class="tech-tag">Transformers</span>
+                            <span class="tech-tag">NLTK</span>
+                            <span class="tech-tag">spaCy</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category card text-center" data-animate="fade-in" data-delay="400">
+                        <div class="skill-icon">
+                            <i class="fas fa-tools" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="skill-title">Herramientas y Frameworks</h3>
+                        <div class="skill-list">
+                            <span class="tech-tag">Git</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Jupyter</span>
+                            <span class="tech-tag">VS Code</span>
+                            <span class="tech-tag">Power BI</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category card text-center" data-animate="fade-in" data-delay="500">
+                        <div class="skill-icon">
+                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="skill-title">Ciberseguridad</h3>
+                        <div class="skill-list">
+                            <span class="tech-tag">Linux</span>
+                            <span class="tech-tag">Wireshark</span>
+                            <span class="tech-tag">Nmap</span>
+                            <span class="tech-tag">Nikto</span>
+                            <span class="tech-tag">Metasploit</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section bg-secondary" aria-labelledby="contact-title">
+            <div class="container">
+                <header class="section-header" data-animate="fade-in">
+                    <h2 id="contact-title" class="section-title">Contacto</h2>
+                    <p class="section-subtitle">
+                        ¿Interesado en colaborar o conocer más sobre mi trabajo? No dudes en contactarme
+                    </p>
+                </header>
+                
+                <div class="contact-content grid grid-lg-2 gap-xl">
+                    <div class="contact-info" data-animate="slide-in-left">
+                        <div class="contact-card card">
+                            <h3 class="h4 mb-lg">Información de Contacto</h3>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-envelope contact-icon" aria-hidden="true"></i>
+                                <div>
+                                    <strong>Email</strong>
+                                    <a href="mailto:jagarrea@etsinf.upv.es" class="contact-link">
+                                        jagarrea@etsinf.upv.es
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-phone contact-icon" aria-hidden="true"></i>
+                                <div>
+                                    <strong>Teléfono</strong>
+                                    <a href="tel:+34691730393" class="contact-link">
+                                        +34 691 730 393
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt contact-icon" aria-hidden="true"></i>
+                                <div>
+                                    <strong>Ubicación</strong>
+                                    <span>València, España</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fab fa-github contact-icon" aria-hidden="true"></i>
+                                <div>
+                                    <strong>GitHub</strong>
+                                    <a 
+                                        href="https://github.com/juangarcia83" 
+                                        class="contact-link"
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                    >
+                                        github.com/juangarcia83
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="availability-card card">
+                            <h4 class="h5 mb-md">Disponibilidad</h4>
+                            <ul class="availability-list">
+                                <li>✅ Prácticas profesionales</li>
+                                <li>✅ Proyectos de investigación</li>
+                                <li>✅ Colaboraciones académicas</li>
+                                <li>✅ Consultoría técnica</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-cta" data-animate="fade-in" data-delay="300">
+                        <div class="cta-card card text-center">
+                            <div class="cta-icon">
+                                <i class="fas fa-rocket" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="h4 mb-md">¿Listo para colaborar?</h3>
+                            <p class="mb-lg">
+                                Estoy siempre abierto a nuevas oportunidades y proyectos interesantes. 
+                                ¡Hablemos sobre cómo podemos trabajar juntos!
+                            </p>
+                            
+                            <div class="cta-actions">
+                                <a href="mailto:jagarrea@etsinf.upv.es" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                                    Enviar Email
+                                </a>
+                                <a href="/pages/cv.html" class="btn btn-secondary btn-lg">
+                                    <i class="fas fa-download" aria-hidden="true"></i>
+                                    Ver CV
+                                </a>
+                            </div>
+                            
+                            <div class="social-proof">
+                                <p class="text-small text-secondary mb-md">
+                                    Tiempo de respuesta promedio: <strong>24 horas</strong>
+                                </p>
+                                <div class="social-links-large">
+                                    <a 
+                                        href="mailto:jagarrea@etsinf.upv.es" 
+                                        class="social-link-large" 
+                                        aria-label="Contactar por email"
+                                    >
+                                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                                    </a>
+                                    <a 
+                                        href="https://github.com/juangarcia83" 
+                                        class="social-link-large" 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        aria-label="Ver perfil de GitHub"
+                                    >
+                                        <i class="fab fa-github" aria-hidden="true"></i>
+                                    </a>
+                                    <a 
+                                        href="tel:+34691730393" 
+                                        class="social-link-large" 
+                                        aria-label="Llamar por teléfono"
+                                    >
+                                        <i class="fas fa-phone" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content grid grid-lg-3 gap-lg">
+                <div class="footer-info">
+                    <h3 class="footer-title">Juan Alfonso García Real</h3>
+                    <p class="footer-description">
+                        Data Scientist especializado en Computer Vision, NLP y Ciberseguridad. 
+                        Construyendo el futuro de la IA.
+                    </p>
+                    <div class="footer-social">
+                        <a 
+                            href="mailto:jagarrea@etsinf.upv.es" 
+                            class="footer-social-link" 
+                            aria-label="Email"
+                        >
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                        </a>
+                        <a 
+                            href="https://github.com/juangarcia83" 
+                            class="footer-social-link" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            aria-label="GitHub"
+                        >
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                        </a>
+                        <a 
+                            href="tel:+34691730393" 
+                            class="footer-social-link" 
+                            aria-label="Teléfono"
+                        >
+                            <i class="fas fa-phone" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 class="footer-section-title">Navegación</h4>
+                    <ul class="footer-nav">
+                        <li><a href="#about" class="footer-link">Sobre mí</a></li>
+                        <li><a href="#projects" class="footer-link">Proyectos</a></li>
+                        <li><a href="#skills" class="footer-link">Habilidades</a></li>
+                        <li><a href="/pages/blog.html" class="footer-link">Blog</a></li>
+                        <li><a href="/pages/lab.html" class="footer-link">Laboratorio</a></li>
+                        <li><a href="/pages/resources.html" class="footer-link">Recursos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-info-extra">
+                    <h4 class="footer-section-title">Información</h4>
+                    <div class="footer-details">
+                        <p><strong>Ubicación:</strong> València, España</p>
+                        <p><strong>Universidad:</strong> UPV</p>
+                        <p><strong>Estado:</strong> Disponible para prácticas</p>
+                        <p><strong>Idiomas:</strong> ES, EN, VAL</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="footer-copyright">
+                        © 2025 Juan Alfonso García Real. Todos los derechos reservados.
+                    </p>
+                    <div class="footer-legal">
+                        <a href="/pages/privacy.html" class="footer-legal-link">Privacidad</a>
+                        <a href="/pages/terms.html" class="footer-legal-link">Términos</a>
+                        <button 
+                            class="footer-legal-link theme-toggle-footer" 
+                            data-theme-toggle
+                            aria-label="Cambiar tema"
+                        >
+                            <i class="fas fa-moon" data-theme-icon aria-hidden="true"></i>
+                            Tema
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button 
+        class="back-to-top" 
+        data-scroll-top
+        aria-label="Volver al inicio"
+        title="Volver al inicio"
+    >
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- Loading indicator -->
+    <div class="loading-indicator" id="loading-indicator">
+        <div class="loading-spinner"></div>
+        <p>Cargando...</p>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Critical JavaScript (inline) -->
+    <script>
+        // Performance optimization: preload critical resources
+        (function() {
+            // Preload critical images
+            const criticalImages = [
+                '/assets/images/hero-bg.webp',
+                '/assets/images/profile-avatar.webp'
+            ];
+            
+            criticalImages.forEach(src => {
+                const link = document.createElement('link');
+                link.rel = 'preload';
+                link.as = 'image';
+                link.href = src;
+                document.head.appendChild(link);
+            });
+            
+            // Hide loading indicator when page is ready
+            window.addEventListener('load', () => {
+                const indicator = document.getElementById('loading-indicator');
+                if (indicator) {
+                    indicator.style.opacity = '0';
+                    setTimeout(() => indicator.remove(), 300);
+                }
+                
+                // Mark load complete for performance monitoring
+                window.performance.mark('app-loaded');
+                window.performance.measure('app-load-time', 'app-start', 'app-loaded');
+            });
+        })();
+    </script>
+    
+    <!-- Font Awesome (async) -->
+    <script 
+        src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" 
+        async
+        crossorigin="anonymous"
+        integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
+    ></script>
+    
+    <!-- Main JavaScript -->
+    <script src="/assets/js/main.js" defer></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator && window.location.hostname !== 'localhost') {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+    
+    <!-- Analytics (only in production) -->
+    <script>
+        if (window.location.hostname.includes('github.io')) {
+            // Google Analytics 4
+            (function() {
+                const script = document.createElement('script');
+                script.async = true;
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID';
+                document.head.appendChild(script);
+                
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'GA_TRACKING_ID', {
+                    page_title: document.title,
+                    page_location: window.location.href
+                });
+                
+                // Track scroll depth
+                let maxScroll = 0;
+                window.addEventListener('scroll', () => {
+                    const scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+                    if (scrollPercent > maxScroll && scrollPercent % 25 === 0) {
+                        maxScroll = scrollPercent;
+                        gtag('event', 'scroll', {
+                            event_category: 'engagement',
+                            event_label: `${scrollPercent}%`,
+                            value: scrollPercent
+                        });
+                    }
+                });
+            })();
+        }
+    </script>
+</body>
+</html>
